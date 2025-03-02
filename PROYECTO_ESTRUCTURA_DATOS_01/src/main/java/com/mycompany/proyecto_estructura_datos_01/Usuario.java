@@ -8,15 +8,17 @@ public class Usuario {
     private int edad;
     private String correo;
     private String contraseña;
-    public int autonumerico = 100000;
+    private boolean estado;  // Activo o Inactivo
+    private static int autonumerico = 100000;
 
     public Usuario(String nombre, String cedula, int edad, String correo, String contraseña) {
-        this.nombre = null;
-        this.cedula = null;
-        this.codigo = "CRC-"+autonumerico;
-        this.edad = 0;
-        this.correo = null;
-        this.contraseña = null;
+        this.nombre = nombre;
+        this.cedula = cedula;
+        this.codigo = "CRC-" + autonumerico;
+        this.edad = edad;
+        this.correo = correo;
+        this.contraseña = contraseña;
+        this.estado = true; // Por defecto el usuario se registra como activo
         autonumerico++;
     }
 
@@ -48,10 +50,6 @@ public class Usuario {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
     public int getEdad() {
         return edad;
     }
@@ -67,6 +65,12 @@ public class Usuario {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-    
-    
+
+    public boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
 }
