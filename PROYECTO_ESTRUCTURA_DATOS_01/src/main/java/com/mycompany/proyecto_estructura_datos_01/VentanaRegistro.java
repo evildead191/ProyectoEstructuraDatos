@@ -1,11 +1,13 @@
-
 package com.mycompany.proyecto_estructura_datos_01;
 
 public class VentanaRegistro extends javax.swing.JFrame {
 
     public VentanaRegistro() {
         initComponents();
+        setTitle("Registro de Usuario");
+        setResizable(false);
     }
+    
     public VentanaRegistro(boolean hecho) {
         initComponents();
         setVisible(false);
@@ -169,7 +171,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
         
         Usuario nuevoUsuario = new Usuario(nombre, cedula, edad, correo, contraseña);
         
-        Menu.usuarios.add(nuevoUsuario);
+        Menu.usuarios.agregarUsuario(nuevoUsuario);
         
         this.dispose();
        
