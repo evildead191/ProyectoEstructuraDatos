@@ -43,7 +43,7 @@ public class ListaEnlazadaSimple {
         Nodo temp = head;
         while (temp != null) {
             if (temp.usuario.getCorreo().equals(correo)) {
-                temp.usuario.setEstado(false); // Se asume que existe un método setEstado en Usuario
+                temp.usuario.setEstado(false); 
                 return true;
             }
             temp = temp.siguiente;
@@ -59,5 +59,3 @@ public class ListaEnlazadaSimple {
         }
     }
 }
-
-
