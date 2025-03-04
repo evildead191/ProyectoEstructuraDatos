@@ -1,11 +1,10 @@
 package com.mycompany.proyecto_estructura_datos_01;
 
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Menu extends javax.swing.JFrame {
-    
-    public static ArrayList<Usuario> usuarios = new ArrayList<>();
+
+    public static ListaEnlazadaSimple usuarios = new ListaEnlazadaSimple();
 
     public static void main(String args[]) {
 
@@ -15,8 +14,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
     }
-
-    
 
     public Menu() {
 
@@ -200,17 +197,16 @@ public class Menu extends javax.swing.JFrame {
 
         boolean encontrado = false;
 
-        for (Usuario usuario : usuarios) {
-            if (usuario != null && usuario.getCorreo().equals(correo)
-                    && usuario.getContraseña().equals(contraseña)) {
-                new VentanaUsuario().setVisible(true);
-                this.dispose();
-                encontrado = true;
-                break; 
-            }
+        Usuario usuarioEncontrado = Menu.usuarios.buscarUsuario(correo, contraseña);
+
+        if (usuarioEncontrado != null) {
+            new VentanaUsuario().setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Acceso denegado. Usuario o contraseña incorrectos.");
         }
 
-        if (!encontrado) { 
+        if (!encontrado) {
             JOptionPane.showMessageDialog(null, "Usuario no encontrado, contraseña o correo incorrecto");
             txtIngresoContra.setText("");
             txtIngresoCorreoE.setText("");
