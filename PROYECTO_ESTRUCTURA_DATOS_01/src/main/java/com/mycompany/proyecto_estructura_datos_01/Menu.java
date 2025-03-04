@@ -24,7 +24,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -180,17 +180,17 @@ public class Menu extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {                                               
         new VentanaRegistro().setVisible(true);
-    }//GEN-LAST:event_btnRegistrarseActionPerformed
+    }                                              
 
-    private void txtIngresoCorreoEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngresoCorreoEActionPerformed
+    private void txtIngresoCorreoEActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIngresoCorreoEActionPerformed
+    }                                                 
 
-    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {                                          
 
         String correo = txtIngresoCorreoE.getText();
         String contraseña = new String(txtIngresoContra.getPassword());
@@ -212,10 +212,10 @@ public class Menu extends javax.swing.JFrame {
             txtIngresoCorreoE.setText("");
         }
 
-    }//GEN-LAST:event_btnEntrarActionPerformed
+    }                                         
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton btnEntrar;
     private javax.swing.JButton btnRegistrarse;
     private javax.swing.JLabel jLabel1;
@@ -227,5 +227,5 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPasswordField txtIngresoContra;
     private javax.swing.JTextField txtIngresoCorreoE;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
