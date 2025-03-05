@@ -192,27 +192,36 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {                                          
 
-        String correo = txtIngresoCorreoE.getText();
+         String correo = txtIngresoCorreoE.getText();
         String contraseña = new String(txtIngresoContra.getPassword());
 
         boolean encontrado = false;
 
         Usuario usuarioEncontrado = Menu.usuarios.buscarUsuario(correo, contraseña);
 
-        if (usuarioEncontrado != null) {
+        if (!encontrado) {
+            JOptionPane.showMessageDialog(null, "Bienvenido al sistema");
             new VentanaUsuario().setVisible(true);
             this.dispose();
-        } else {
+            //            txtIngresoContra.setText("");
+            //            txtIngresoCorreoE.setText("");
+        }else if (usuarioEncontrado != null) {
             JOptionPane.showMessageDialog(this, "Acceso denegado. Usuario o contraseña incorrectos.");
         }
 
-        if (!encontrado) {
-            JOptionPane.showMessageDialog(null, "Usuario no encontrado, contraseña o correo incorrecto");
-            txtIngresoContra.setText("");
-            txtIngresoCorreoE.setText("");
-        }
-
-    }                                         
+        //        if (usuarioEncontrado != null) {
+            //            new VentanaUsuario().setVisible(true);
+            //            this.dispose();
+            //        } else {
+            //            JOptionPane.showMessageDialog(this, "Acceso denegado. Usuario o contraseña incorrectos.");
+            //        }
+        //
+        //        if (!encontrado) {
+            //            JOptionPane.showMessageDialog(null, "Bienvenic");
+            //            txtIngresoContra.setText("");
+            //            txtIngresoCorreoE.setText("");
+            //        }
+    }                                    
 
 
     // Variables declaration - do not modify                     
